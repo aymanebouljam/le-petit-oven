@@ -1,32 +1,26 @@
-# SolidStart
+# Le Petit Oven
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+Premium bakery showcase website built with SolidStart, Bun, TypeScript, and Tailwind CSS v4.
 
-## Creating a project
-
-```bash
-# create a new project in the current directory
-npm init solid@latest
-
-# create a new project in my-app
-npm init solid@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Run with Bun
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install
+bun run dev
 ```
 
-## Building
+## Production
 
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
+```bash
+bun run build
+bun run preview
+```
 
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
+## Architecture
 
-## This project was created with the [Solid CLI](https://github.com/solidjs-community/solid-cli)
+- `src/routes/index.tsx`: page composition and page-level interaction state
+- `src/data/site.ts`: reusable demo content arrays
+- `src/components/layout`: navbar and footer
+- `src/components/sections`: all landing page sections
+- `src/components/ui`: shared primitives
+- `public/images`: local bakery-themed SVG placeholders

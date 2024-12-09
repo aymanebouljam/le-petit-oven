@@ -1,8 +1,9 @@
 {
-  "name": "example-with-tailwindcss",
+  "name": "le-petit-oven",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
+    "build": "vite build",
     "start": "vite start",
     "preview": "vite preview",
     "lint": "biome check .",
@@ -22,6 +23,7 @@
     "tailwindcss": "^4.0.7"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22",
+    "bun": ">=1.1.0"
   }
 }
