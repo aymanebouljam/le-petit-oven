@@ -1,9 +1,15 @@
 import { ArrowRight, MapPin, Sparkles } from "lucide-solid";
 import { For } from "solid-js";
 import Button from "~/components/ui/Button";
+import CountUp from "~/components/ui/CountUp";
 import { bakeryStats, heroHighlights } from "~/data/site";
 
 export default function Hero() {
+	const heroImage =
+		"https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1200&q=80";
+	const pastryImage =
+		"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80";
+
 	return (
 		<section
 			class="page-shell overflow-hidden pt-28 sm:pt-32"
@@ -50,7 +56,7 @@ export default function Hero() {
 							{(stat) => (
 								<div class="space-y-1">
 									<p class="font-display text-4xl text-[var(--color-espresso)]">
-										{stat.value}
+										<CountUp value={stat.value} />
 									</p>
 									<p class="text-sm uppercase tracking-[0.24em] text-[var(--color-mocha)]">
 										{stat.label}
@@ -65,19 +71,24 @@ export default function Hero() {
 					<div class="editorial-grid absolute inset-4 -z-10 rounded-[2.5rem] opacity-40" />
 					<div class="texture-card relative overflow-hidden rounded-[2.5rem] p-4 sm:p-6">
 						<div class="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-							<div class="overflow-hidden rounded-[2rem] bg-[#f0e2d0]">
+							<div class="group interactive-surface overflow-hidden rounded-[2rem] bg-[#f0e2d0]">
 								<img
 									alt="Bakery counter with bread and pastries"
-									class="h-full min-h-[420px] w-full object-cover"
-									src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1600&q=80"
+									class="image-zoom h-full min-h-[420px] w-full object-cover"
+									decoding="async"
+									fetchpriority="high"
+									loading="eager"
+									src={heroImage}
 								/>
 							</div>
 							<div class="flex flex-col gap-4">
-								<div class="overflow-hidden rounded-[2rem] bg-[#f6e9d7]">
+								<div class="group interactive-surface overflow-hidden rounded-[2rem] bg-[#f6e9d7]">
 									<img
 										alt="A pair of artisan pastries on a serving plate"
-										class="h-52 w-full object-cover"
-										src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=80"
+										class="image-zoom h-52 w-full object-cover"
+										decoding="async"
+										loading="lazy"
+										src={pastryImage}
 									/>
 								</div>
 								<div class="glass-panel rounded-[2rem] p-6">
