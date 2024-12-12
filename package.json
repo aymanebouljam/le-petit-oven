@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"start": "vite start",
+		"start": "vite preview",
 		"preview": "vite preview",
 		"lint": "biome check .",
 		"format": "biome format . --write"
