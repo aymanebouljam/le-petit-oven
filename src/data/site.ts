@@ -43,6 +43,7 @@ export type GalleryItem = {
 	caption: string;
 	category: string;
 	image: string;
+	title: string;
 };
 
 export type Testimonial = {
@@ -80,7 +81,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Slow-fermented country loaf with a bronzed crust and airy crumb.",
 		image:
-			"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
+			"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=720&q=80",
 		name: "Country Levain",
 		price: "$9",
 	},
@@ -89,7 +90,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Laminated over three folds for a honeycomb center and delicate snap.",
 		image:
-			"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=80",
+			"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=720&q=80",
 		name: "Butter Croissant",
 		price: "$5",
 	},
@@ -98,7 +99,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Vanilla sponge layered with praline cream and roasted hazelnut crunch.",
 		image:
-			"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80",
+			"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=720&q=80",
 		name: "Praline Entremet",
 		price: "$12",
 	},
@@ -107,7 +108,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Silken custard tart with torched sugar and macerated berries.",
 		image:
-			"https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=1200&q=80",
+			"https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=720&q=80",
 		name: "Berry Creme Tart",
 		price: "$8",
 	},
@@ -116,7 +117,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Espresso-glazed brioche swirl with mascarpone and dark cocoa.",
 		image:
-			"https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=80",
+			"https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=720&q=80",
 		name: "Cafe Morning Bun",
 		price: "$6",
 	},
@@ -125,7 +126,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Chocolate sable with fleur de sel, caramel center, and toasted pecans.",
 		image:
-			"https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=80",
+			"https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=720&q=80",
 		name: "Salted Caramel Biscuit",
 		price: "$4",
 	},
@@ -137,7 +138,7 @@ export const specialties: Specialty[] = [
 		description:
 			"A dramatic centerpiece of crisp choux, diplomat cream, and burnished caramel spun to order.",
 		image:
-			"https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1400&q=80",
+			"https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=960&q=80",
 		name: "Croquembouche Tower",
 		note: "Available for celebrations and elegant gatherings.",
 	},
@@ -146,7 +147,7 @@ export const specialties: Specialty[] = [
 		description:
 			"Poached pear, almond frangipane, and vanilla bean glaze on a buttery sable base.",
 		image:
-			"https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=1400&q=80",
+			"https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=960&q=80",
 		name: "Poire Amande Tart",
 		note: "Best enjoyed with our house-roasted Ethiopian espresso.",
 	},
@@ -155,7 +156,7 @@ export const specialties: Specialty[] = [
 		description:
 			"Twice-baked pistachio croissant finished with orange blossom syrup and crushed nuts.",
 		image:
-			"https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=1400&q=80",
+			"https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=960&q=80",
 		name: "Pistachio Croissant",
 		note: "Baked in limited batches every morning at 8:00.",
 	},
@@ -207,7 +208,8 @@ export const galleryItems: GalleryItem[] = [
 			"Layers of croissants, pain suisse, and morning buns prepared for first service.",
 		category: "Pastries",
 		image:
-			"https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1600&q=80",
+			"https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=900&q=80",
+		title: "Morning Viennoiserie",
 	},
 	{
 		alt: "Bread shelves with rustic sourdough and seeded loaves",
@@ -215,7 +217,8 @@ export const galleryItems: GalleryItem[] = [
 			"Our bread wall balances naturally leavened loaves with daily rye and grain blends.",
 		category: "Bread",
 		image:
-			"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&q=80",
+			"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+		title: "Bread Wall",
 	},
 	{
 		alt: "Coffee and tartlet pairing on a small bistro table",
@@ -223,15 +226,16 @@ export const galleryItems: GalleryItem[] = [
 			"Afternoon pairings designed for slow pauses and quiet conversation.",
 		category: "Cafe",
 		image:
-			"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80",
+			"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
+		title: "Coffee Pause",
 	},
 	{
 		alt: "Elegant bakery packaging with ribbon and pastry box",
 		caption:
 			"Signature packaging for gifting pastry assortments and celebration cakes.",
 		category: "Packaging",
-		image:
-			"https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80",
+		image: "https://unsplash.com/photos/7YZJDPtG_lI/download?force=true",
+		title: "Signature Packaging",
 	},
 	{
 		alt: "Bakery interior with warm shelving and pastries",
@@ -239,7 +243,8 @@ export const galleryItems: GalleryItem[] = [
 			"An intimate interior framed by warm oak, brushed brass, and natural stone.",
 		category: "Interior",
 		image:
-			"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=80",
+			"https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80",
+		title: "Bakery Interior",
 	},
 	{
 		alt: "Decorated cakes on pedestal stands",
@@ -247,7 +252,8 @@ export const galleryItems: GalleryItem[] = [
 			"Celebration cakes finished with delicate textures and restrained decoration.",
 		category: "Cakes",
 		image:
-			"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1600&q=80",
+			"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80",
+		title: "Celebration Cakes",
 	},
 ];
 

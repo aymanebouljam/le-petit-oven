@@ -43,7 +43,7 @@ export default function Gallery(props: GalleryProps) {
 						{(item, index) => (
 							<button
 								aria-label={`Open gallery image ${item.category}`}
-								class={`group relative overflow-hidden rounded-[2rem] text-left ${
+								class={`group interactive-surface relative overflow-hidden rounded-[2rem] text-left ${
 									index() === 0 || index() === 3
 										? "md:row-span-2 md:min-h-[500px]"
 										: ""
@@ -55,7 +55,9 @@ export default function Gallery(props: GalleryProps) {
 							>
 								<img
 									alt={item.alt}
-									class="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+									class="image-zoom h-full w-full object-cover"
+									decoding="async"
+									loading="lazy"
 									src={item.image}
 								/>
 								<div class="absolute inset-0 bg-[linear-gradient(180deg,transparent_20%,rgba(31,18,12,0.74)_100%)]" />
@@ -65,7 +67,7 @@ export default function Gallery(props: GalleryProps) {
 											{item.category}
 										</p>
 										<p class="mt-2 max-w-xs font-display text-3xl leading-tight">
-											{item.caption}
+											{item.title}
 										</p>
 									</div>
 									<span class="grid size-12 place-items-center rounded-full border border-white/20 bg-white/10 backdrop-blur">
@@ -81,13 +83,15 @@ export default function Gallery(props: GalleryProps) {
 			<Modal
 				onClose={props.onClose}
 				open={props.isOpen}
-				title={selectedItem()?.category ?? "Gallery"}
+				title={selectedItem()?.title ?? "Gallery"}
 			>
 				<div class="grid gap-6 p-4 md:grid-cols-[1fr_auto] md:p-6">
 					<div class="overflow-hidden rounded-[1.5rem] bg-[var(--color-sand)]">
 						<img
 							alt={selectedItem()?.alt}
 							class="max-h-[72vh] w-full object-cover"
+							decoding="async"
+							loading="lazy"
 							src={selectedItem()?.image}
 						/>
 					</div>
