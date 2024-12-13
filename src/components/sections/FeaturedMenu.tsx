@@ -37,7 +37,7 @@ export default function FeaturedMenu() {
 				<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 					<For each={filteredItems()}>
 						{(item, index) => (
-							<Card class="group overflow-hidden p-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_70px_rgba(76,55,38,0.16)]">
+							<Card class="group interactive-surface overflow-hidden p-4">
 								<article
 									data-reveal
 									style={{ "--reveal-delay": `${index() * 90}ms` }}
@@ -45,7 +45,9 @@ export default function FeaturedMenu() {
 									<div class="overflow-hidden rounded-[1.6rem] bg-sand">
 										<img
 											alt={item.name}
-											class="h-64 w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+											class="image-zoom h-64 w-full object-cover"
+											decoding="async"
+											loading="lazy"
 											src={item.image}
 										/>
 									</div>
