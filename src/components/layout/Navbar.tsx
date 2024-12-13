@@ -8,6 +8,7 @@ import {
 	Show,
 } from "solid-js";
 import Button from "~/components/ui/Button";
+import Logo from "~/components/ui/Logo";
 import type { NavLink } from "~/data/site";
 
 type NavbarProps = {
@@ -43,19 +44,7 @@ export default function Navbar(props: NavbarProps) {
 				}`}
 			>
 				<div class="flex items-center justify-between gap-6">
-					<a class="flex items-center gap-3" href="#home">
-						<span class="grid size-11 place-items-center rounded-full bg-[var(--color-espresso)] text-[var(--color-cream)] shadow-[0_14px_24px_rgba(59,36,23,0.18)]">
-							LP
-						</span>
-						<div>
-							<p class="font-display text-3xl leading-none text-[var(--color-espresso)]">
-								Le Petit Oven
-							</p>
-							<p class="text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-[var(--color-caramel)]">
-								Artisan Bakery
-							</p>
-						</div>
-					</a>
+					<Logo href="#home" />
 
 					<nav aria-label="Primary" class="hidden items-center gap-1 lg:flex">
 						<For each={props.links}>

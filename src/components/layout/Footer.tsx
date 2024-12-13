@@ -1,5 +1,6 @@
 import { Facebook, Instagram, MapPinned } from "lucide-solid";
 import { For } from "solid-js";
+import Logo from "~/components/ui/Logo";
 import type { NavLink } from "~/data/site";
 
 type FooterProps = {
@@ -11,7 +12,7 @@ export default function Footer(props: FooterProps) {
 		<footer class="border-t border-border bg-[rgba(255,250,243,0.88)]">
 			<div class="section-shell flex flex-col gap-10 py-12 lg:flex-row lg:items-end lg:justify-between">
 				<div class="max-w-md space-y-4">
-					<p class="eyebrow">Le Petit Oven</p>
+					<Logo href="#home" />
 					<h2 class="font-display text-4xl text-espresso">
 						Crafted for slow mornings and elegant celebrations.
 					</h2>
@@ -85,7 +86,7 @@ export default function Footer(props: FooterProps) {
 				</div>
 			</div>
 			<div class="border-t border-border px-6 py-5 text-center text-sm text-mocha">
-				© 2026 Le Petit Oven. All rights reserved.
+				© 2024 Le Petit Oven. All rights reserved.
 			</div>
 		</footer>
 	);
