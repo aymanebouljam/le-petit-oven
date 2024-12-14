@@ -32,7 +32,7 @@ export default function Testimonials() {
 					/>
 				</div>
 
-				<Card class="overflow-hidden p-8 sm:p-10">
+				<Card class="interactive-surface overflow-hidden p-8 sm:p-10">
 					<div data-reveal="right">
 						<div class="flex items-start justify-between gap-4">
 							<Quote class="size-10 text-[var(--color-caramel)]" />

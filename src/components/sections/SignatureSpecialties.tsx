@@ -20,7 +20,7 @@ export default function SignatureSpecialties() {
 							<For each={specialties}>
 								{(specialty, index) => (
 									<article
-										class={`texture-card overflow-hidden rounded-[2rem] ${
+										class={`texture-card group interactive-surface overflow-hidden rounded-[2rem] ${
 											index() === 0 ? "lg:row-span-2" : ""
 										}`}
 										data-reveal
@@ -29,9 +29,11 @@ export default function SignatureSpecialties() {
 										<div class="overflow-hidden bg-[var(--color-sand)]">
 											<img
 												alt={specialty.name}
-												class={`w-full object-cover ${
+												class={`image-zoom w-full object-cover ${
 													index() === 0 ? "h-[360px] lg:h-[520px]" : "h-60"
 												}`}
+												decoding="async"
+												loading="lazy"
 												src={specialty.image}
 											/>
 										</div>

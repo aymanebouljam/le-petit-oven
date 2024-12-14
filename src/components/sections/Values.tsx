@@ -19,7 +19,7 @@ export default function Values() {
 				<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
 					<For each={values}>
 						{(item, index) => (
-							<Card class="group p-6 transition duration-500 hover:-translate-y-1 hover:bg-white/95">
+							<Card class="group interactive-surface p-6 hover:bg-white/95">
 								<article
 									data-reveal
 									style={{ "--reveal-delay": `${index() * 90}ms` }}
