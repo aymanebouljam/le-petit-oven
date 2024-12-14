@@ -5,6 +5,11 @@ import SectionTitle from "~/components/ui/SectionTitle";
 import { visitDetails } from "~/data/site";
 
 export default function Visit() {
+	const mapEmbedUrl =
+		"https://www.openstreetmap.org/export/embed.html?bbox=-7.5992%2C33.5696%2C-7.5804%2C33.5766&layer=mapnik&marker=33.5731%2C-7.5898";
+	const mapDirectionsUrl =
+		"https://www.openstreetmap.org/?mlat=33.5731&mlon=-7.5898#map=15/33.5731/-7.5898";
+
 	return (
 		<section class="section-spacing pb-24" data-section="visit" id="visit">
 			<div class="section-shell">
@@ -87,11 +92,22 @@ export default function Visit() {
 
 					<div class="flex flex-col gap-5" data-reveal="right">
 						<div class="overflow-hidden rounded-[2rem] border border-white/10 bg-[rgba(255,246,236,0.08)] p-3">
-							<img
-								alt="Map showing the bakery location in Casablanca"
-								class="h-[320px] w-full rounded-[1.4rem] object-cover"
-								src="https://staticmap.openstreetmap.de/staticmap.php?center=33.5731,-7.5898&zoom=14&size=1200x800&markers=33.5731,-7.5898,lightblue1"
+							<iframe
+								class="h-[320px] w-full rounded-[1.4rem]"
+								loading="lazy"
+								referrerPolicy="no-referrer-when-downgrade"
+								src={mapEmbedUrl}
+								title="Map showing the bakery location in Casablanca"
 							/>
+							<a
+								class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[rgba(255,244,230,0.88)] transition hover:text-white"
+								href={mapDirectionsUrl}
+								rel="noreferrer"
+								target="_blank"
+							>
+								<MapPin class="size-4" />
+								Open in Maps
+							</a>
 						</div>
 						<div class="grid gap-4 sm:grid-cols-2">
 							<div class="rounded-[1.75rem] bg-white/10 p-5">

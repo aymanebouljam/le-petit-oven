@@ -17,23 +17,72 @@ export default function Home() {
 	const [selectedGalleryIndex, setSelectedGalleryIndex] = createSignal(0);
 
 	onMount(() => {
+		const updateHash = (sectionId: string) => {
+			const nextHash = `#${sectionId}`;
+
+			if (window.location.hash === nextHash) {
+				return;
+			}
+
+			const nextUrl = new URL(window.location.href);
+			nextUrl.hash = nextHash;
+			window.history.replaceState(window.history.state, "", nextUrl);
+		};
+
 		const observedSections = Array.from(
 			document.querySelectorAll<HTMLElement>("[data-section]"),
 		);
 		const revealElements = Array.from(
 			document.querySelectorAll<HTMLElement>("[data-reveal]"),
 		);
+		const visibleSections = new Map<string, number>();
+		const revealIfInView = (element: HTMLElement) => {
+			const rect = element.getBoundingClientRect();
+			const viewportHeight = window.innerHeight;
+			const isVisible =
+				rect.top <= viewportHeight * 0.92 &&
+				rect.bottom >= viewportHeight * 0.08;
+
+			if (isVisible) {
+				element.dataset.revealed = "true";
+			}
+
+			return isVisible;
+		};
 
 		const sectionObserver = new IntersectionObserver(
 			(entries) => {
-				const visibleEntry = entries
-					.filter((entry) => entry.isIntersecting)
-					.sort(
-						(left, right) => right.intersectionRatio - left.intersectionRatio,
-					)[0];
+				for (const entry of entries) {
+					if (!(entry.target instanceof HTMLElement)) {
+						continue;
+					}
 
-				if (visibleEntry?.target instanceof HTMLElement) {
-					setActiveSection(visibleEntry.target.dataset.section ?? "home");
+					const sectionId = entry.target.dataset.section;
+
+					if (!sectionId) {
+						continue;
+					}
+
+					if (entry.isIntersecting) {
+						visibleSections.set(sectionId, entry.intersectionRatio);
+					} else {
+						visibleSections.delete(sectionId);
+					}
+				}
+
+				if (window.scrollY <= 96) {
+					setActiveSection("home");
+					updateHash("home");
+					return;
+				}
+
+				const nextSection = Array.from(visibleSections.entries()).sort(
+					(left, right) => right[1] - left[1],
+				)[0]?.[0];
+
+				if (nextSection) {
+					setActiveSection(nextSection);
+					updateHash(nextSection);
 				}
 			},
 			{
@@ -62,6 +111,10 @@ export default function Home() {
 		}
 
 		for (const element of revealElements) {
+			if (revealIfInView(element)) {
+				continue;
+			}
+
 			revealObserver.observe(element);
 		}
 
