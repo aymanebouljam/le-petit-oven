@@ -44,7 +44,7 @@ export default function Navbar(props: NavbarProps) {
 				}`}
 			>
 				<div class="flex items-center justify-between gap-6">
-					<Logo href="#home" />
+					<Logo class="pl-2" href="#home" />
 
 					<nav aria-label="Primary" class="hidden items-center gap-1 lg:flex">
 						<For each={props.links}>
