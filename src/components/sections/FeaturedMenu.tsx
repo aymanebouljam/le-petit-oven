@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-solid";
-import { createMemo, createSignal, For } from "solid-js";
+import { createEffect, createMemo, createSignal, For } from "solid-js";
 import Card from "~/components/ui/Card";
 import FilterTabs from "~/components/ui/FilterTabs";
 import SectionTitle from "~/components/ui/SectionTitle";
@@ -7,12 +7,31 @@ import { type MenuCategory, menuCategories, menuItems } from "~/data/site";
 
 export default function FeaturedMenu() {
 	const [activeCategory, setActiveCategory] = createSignal<MenuCategory>("All");
+	let cardsGridRef: HTMLDivElement | undefined;
+	let hasInitializedFilterReveal = false;
 
 	const filteredItems = createMemo(() =>
 		activeCategory() === "All"
 			? menuItems
 			: menuItems.filter((item) => item.category === activeCategory()),
 	);
+
+	createEffect(() => {
+		activeCategory();
+
+		if (!hasInitializedFilterReveal) {
+			hasInitializedFilterReveal = true;
+			return;
+		}
+
+		queueMicrotask(() => {
+			cardsGridRef
+				?.querySelectorAll<HTMLElement>("[data-reveal]")
+				.forEach((element) => {
+					element.dataset.revealed = "true";
+				});
+		});
+	});
 
 	return (
 		<section class="section-spacing" data-section="menu" id="menu">
@@ -34,7 +53,7 @@ export default function FeaturedMenu() {
 					</div>
 				</div>
 
-				<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+				<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3" ref={cardsGridRef}>
 					<For each={filteredItems()}>
 						{(item, index) => (
 							<Card class="group interactive-surface overflow-hidden p-4">
@@ -46,8 +65,7 @@ export default function FeaturedMenu() {
 										<img
 											alt={item.name}
 											class="image-zoom h-64 w-full object-cover"
-											decoding="async"
-											loading="lazy"
+											loading="eager"
 											src={item.image}
 										/>
 									</div>

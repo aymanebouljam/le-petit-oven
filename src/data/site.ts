@@ -16,6 +16,12 @@ export type NavLink = {
 
 export type MenuCategory = "All" | "Breads" | "Pastries" | "Cakes" | "Desserts";
 
+export type MenuCategoryOption = {
+	image: string;
+	imageAlt: string;
+	label: MenuCategory;
+};
+
 export type MenuItem = {
 	category: Exclude<MenuCategory, "All">;
 	description: string;
@@ -67,12 +73,37 @@ export const heroHighlights = [
 	"Coffee pairings and seasonal tartlets daily",
 ];
 
-export const menuCategories: MenuCategory[] = [
-	"All",
-	"Breads",
-	"Pastries",
-	"Cakes",
-	"Desserts",
+export const menuCategories: MenuCategoryOption[] = [
+	{
+		image:
+			"https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=320&q=80",
+		imageAlt: "Bakery counter with assorted pastries and breads",
+		label: "All",
+	},
+	{
+		image:
+			"https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=320&q=80",
+		imageAlt: "Rustic artisan bread loaf",
+		label: "Breads",
+	},
+	{
+		image:
+			"https://images.unsplash.com/photo-1679458219811-8b4c8b4c82c9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		imageAlt: "Golden butter croissant",
+		label: "Pastries",
+	},
+	{
+		image:
+			"https://images.unsplash.com/photo-1549572189-dddb1adf739b?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		imageAlt: "Layered praline cake slice",
+		label: "Cakes",
+	},
+	{
+		image:
+			"https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		imageAlt: "Berry custard tart dessert",
+		label: "Desserts",
+	},
 ];
 
 export const menuItems: MenuItem[] = [
@@ -90,7 +121,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Laminated over three folds for a honeycomb center and delicate snap.",
 		image:
-			"https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=720&q=80",
+			"https://images.unsplash.com/photo-1679458219811-8b4c8b4c82c9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		name: "Butter Croissant",
 		price: "$5",
 	},
@@ -99,7 +130,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Vanilla sponge layered with praline cream and roasted hazelnut crunch.",
 		image:
-			"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=720&q=80",
+			"https://images.unsplash.com/photo-1549572189-dddb1adf739b?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		name: "Praline Entremet",
 		price: "$12",
 	},
@@ -108,7 +139,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Silken custard tart with torched sugar and macerated berries.",
 		image:
-			"https://images.unsplash.com/photo-1464306076886-da185f6a9d05?auto=format&fit=crop&w=720&q=80",
+			"https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		name: "Berry Creme Tart",
 		price: "$8",
 	},
@@ -117,7 +148,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Espresso-glazed brioche swirl with mascarpone and dark cocoa.",
 		image:
-			"https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=720&q=80",
+			"https://images.unsplash.com/photo-1625425405713-a0753f7552a9?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		name: "Cafe Morning Bun",
 		price: "$6",
 	},
@@ -126,7 +157,7 @@ export const menuItems: MenuItem[] = [
 		description:
 			"Chocolate sable with fleur de sel, caramel center, and toasted pecans.",
 		image:
-			"https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=720&q=80",
+			"https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		name: "Salted Caramel Biscuit",
 		price: "$4",
 	},
