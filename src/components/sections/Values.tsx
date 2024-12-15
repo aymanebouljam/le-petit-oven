@@ -25,7 +25,7 @@ export default function Values() {
 									style={{ "--reveal-delay": `${index() * 90}ms` }}
 								>
 									<div class="flex items-start gap-4">
-										<div class="grid size-14 place-items-center rounded-2xl bg-[var(--color-espresso)] text-[var(--color-cream)] transition duration-300 group-hover:scale-105">
+										<div class="grid size-14 shrink-0 place-items-center rounded-2xl bg-[var(--color-espresso)] text-[var(--color-cream)] transition duration-300 group-hover:scale-105">
 											<item.icon class="size-6" />
 										</div>
 										<div class="space-y-3">
