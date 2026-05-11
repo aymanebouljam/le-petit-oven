@@ -1,6 +1,12 @@
 # Le Petit Oven
 
-![Le Petit Oven homepage](src/assets/home.png)
+## Project Demo
+
+<p>Click the preview below to watch the demo. Use Ctrl + Click or open in a new tab if needed.</p>
+
+<a href="https://youtu.be/Qcgyh_rN-Qk">
+  <img src="https://img.youtube.com/vi/Qcgyh_rN-Qk/maxresdefault.jpg" alt="Project Demo" width="100%" />
+</a>
 
 Le Petit Oven is a polished bakery showcase website built with SolidStart, TypeScript, Bun, and Tailwind CSS. The project is structured as a single-page marketing site with reusable UI primitives, section-based composition, and content-driven data stored in one central file.
 
