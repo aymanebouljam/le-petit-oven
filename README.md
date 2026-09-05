@@ -4,11 +4,7 @@ Le Petit Oven is a polished bakery showcase website built with SolidStart, TypeS
 
 ## Project Demo
 
-<p>Click the preview below to watch the demo. Use Ctrl + Click or open in a new tab if needed.</p>
-
-<a href="https://youtu.be/Qcgyh_rN-Qk">
-  <img src="https://img.youtube.com/vi/Qcgyh_rN-Qk/maxresdefault.jpg" alt="Project Demo" width="100%" />
-</a>
+[![Watch on YouTube](https://img.shields.io/badge/Watch%20on-YouTube-FF0000?logo=youtube&logoColor=white)](https://youtu.be/Qcgyh_rN-Qk)
 
 ## Stack
 
